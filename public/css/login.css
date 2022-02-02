@@ -1,0 +1,126 @@
+*, *::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --thick-blue: #0e0d0d;
+}
+
+@font-face {
+    font-family:poppins;
+    src: url("../fonts/poppins/Poppins-Light.ttf");
+}
+
+@font-face {
+    font-family:poppins-medium;
+    src: url("../fonts/poppins/Poppins-Medium.ttf");
+}
+
+@font-face {
+    font-family:poppins-bold;
+    src: url("../fonts/poppins/Poppins-Bold.ttf");
+}
+
+
+body{
+    font-family: poppins-medium,'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #221939;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    color: var(--thick-blue);
+    font-size: 15px;
+}
+
+.login-container{
+    width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.login-container .logo > img{
+    width: 70px;
+    height: 70px;
+    margin-bottom: 30px;
+}
+
+.login-container .login-form{
+    width: 100%;
+    border-radius: 6px;
+    background-color: white;
+    padding: 50px 25px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-container h1{
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 26px;
+}
+
+
+
+.login-container  .login-form form > div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.login-container  .login-form form > div p{
+    font-weight: bold;
+    letter-spacing: .7px;
+    margin-bottom: 5px;
+}
+
+.login-container  .login-form input{
+    width: 100%;
+    outline: none;
+    border: 1px solid gainsboro;
+    padding: 5px 10px;
+    border-radius: 4px;
+    height: 50px;
+    font-size: 15px;
+}
+
+.login-container button{
+    display: flex;
+    align-items: center;
+    background-color: #2980b9;
+    height: 50px;
+    margin-top: 30px;
+    outline: none;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 17px;
+    margin-bottom: 20px;
+    margin-inline: auto;
+    padding:20px 25px;
+}
+
+.login-container p.forget-password {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.login-container p.sign-up {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-container .footer{
+    border-top: 1px solid gainsboro;
+    text-align: center;
+    padding: 20px 0 0;
+}
+

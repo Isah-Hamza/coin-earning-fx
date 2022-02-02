@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <base href="/"/>
+    <script src="./dashboard/dashboard.js" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="./dashboard/dashboard.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="main-header">
+            <div class="left">
+                <h2>CryptoEarning FX</h2>
+                <img src="./assets/img/icon-hamburger.svg" alt="hamburger">
+            </div>
+            <div class="right">
+                <div class="switch">
+                    <div class="toggle"></div>
+                </div>
+                <div class="language">
+                    <p>Select language </p>
+                </div>
+                <i class="fas fa-bell"></i>
+                <i class="fas fa-book"></i>
+                <i class="fas fa-user"></i>
+            </div>
+        </div>
+    <div class="main-section">
+        <aside>
+            <div class="user links dropdown">
+                    <div>
+                        
+                            <p><%= user.fullname %></p>
+                            <i class="fas fa-caret-down"></i>
+                        
+                    </div>
+               
+                <ul class="dropdown-items">
+                    <li><a href="./profile.html">Account Settings</a></li>
+                </ul>
+            </div>
+            <div class="links">
+                <li class="dashboard active">
+                    <a href="#">
+                        <i class="fas fa-home"></i>
+                        <p>Dashboard</p>   
+                    </a>
+                </li>
+                <li class="account dropdown">
+                    <a href="#">
+                    <i class="fas fa-user"></i>
+                    <p>Account</p>  
+                    <i class="fas fa-caret-down"></i>   
+                    </a>
+                    <ul class="dropdown-items ">
+                           <li> <a href="account-details.html">Withdrawal info</a> </li>
+                            <li> <a href="notifications.html">Notifications</a> </li>
+                    </ul>
+                </li>
+                   
+                <li class="support">
+                    <a href="./support.html">
+                        <i class="fas fa-cog"></i>
+                        <p>Support</p>
+                    </a>
+                </li>
+                <li class="plrecord">
+                    <a href="plrecord.html">
+                        <i class="fas fa-signal"></i>
+                        <p>P/L record</p>
+                    </a>
+                </li>
+                <li class="transaction">
+                    <a href="transactions-history.html">
+                        <i class="fas fa-briefcase"></i>
+                        <p>Transaction history</p>
+                    </a>
+                </li>
+                <li class="deposit dropdown">
+                    <a href="#">
+                        <i class="fas fa-credit-card"></i>
+                        <p>Deposit/Withdrawal</p>
+                        <i class="fas fa-caret-down"></i>
+                    </a>
+                     <ul class="dropdown-items">
+                        <li> <a href="./deposits.html">Deposit</a> </li>
+                        <li> <a href="./withdrawals.html">Withdrawals</a> </li>
+                     </ul>
+                </li>                   
+
+                <li class="subscription">
+                    <a href="./subtrade.html">
+                        <i class="fas fa-th"></i>
+                        <p>Subscription trade</p>
+                    </a>
+                </li>
+                <li class="packages dropdown">
+                    <a href="#">
+                        <i class="fas fa-cube"></i>
+                        <p>Packages</p>
+                        <i class="fas fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-items">
+                        <li> <a href="./mplans.html">Investment Plans</a> </li>
+                        <li>My packages</li>
+                    </ul>
+                </li>                    
+                <li class="refer">
+                    <a href="./referuser.html">
+                        <i class="fas fa-recycle"></i>
+                        <p>Refer users</p>
+                    </a>
+                </li>
+            </div>
+
+        </aside>
+        <main>
+            <h2 class="welcome">Welcome, <%= user.fullname %> !</h2>
+           <p class="success">Welcome to Crypto Earning FX. Your Login was successful!</p>
+            <div class="user-details">
+                <div class="deposit">
+                    <i class="fas fa-download" style="color: rgb(255, 173, 70), 173, 70);"></i>
+                    <div class="right">
+                        <p>Deposited</p>
+                        <p>$0.00</p>
+                    </div>
+                </div>
+                <div class="profit">
+                    <i class="fas fa-coins" style="color: #1f8635;" ></i>
+                    <div class="right">
+                        <p>Profit</p>
+                        <p>$0.00</p>
+                    </div>
+                </div>
+
+                <div class="bonus">
+                    <i class="fas fa-gift" style="color: #f25961;" ></i>
+                    <div class="right">
+                        <p>Bonus</p>
+                        <p>$0.00</p>
+                    </div>
+                </div>
+                <div class="ref">
+                    <i class="fas fa-retweet" style="color: #1572e8;"></i>
+                    <div class="right">
+                        <p>Ref. Bonus</p>
+                        <p>$0.00</p>
+                    </div>
+                </div>
+                <div class="balance">
+                    <i class="fas fa-coins" style="color: #1f8635;" ></i>
+                    <div class="right">
+                        <p>Balance</p>
+                        <p>$0.00</p>
+                    </div>
+                </div>
+                <div class="total-packages">
+                    <i class="fas fa-envelope" style="color: #f25961;"></i>
+                    <div class="right">
+                        <p>Total Packages</p>
+                        <p>0</p>
+                    </div>
+                </div>
+                <div class="active-packages">
+                    <i class="fas fa-envelope-open" style="color: #1572e8;"></i>
+                    <div class="right">
+                        <p>Active Packages</p>
+                        <p>0</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="trading-view personal-chart">
+                <p>Personal Trading Chart</p>
+                <!-- TradingView Widget BEGIN -->
+                <div class="tradingview-widget-container" >
+                    <div id="tradingview_05f2c" style="height: 500px;"></div>
+                    <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BTCUSD/?exchange=COINBASE" rel="noopener" target="_blank"><span class="blue-text">Personal trading chart</span></a></div>
+                    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                    <script type="text/javascript">
+                    new TradingView.widget(
+                    {
+                    "autosize": true,
+                    "symbol": "COINBASE:BTCUSD",
+                    "interval": "D",
+                    "timezone": "Etc/UTC",
+                    "theme": "dark",
+                    "style": "1",
+                    "locale": "en",
+                    "toolbar_bg": "#f1f3f6",
+                    "enable_publishing": false,
+                    "hide_side_toolbar": false,
+                    "allow_symbol_change": true,
+                    "container_id": "tradingview_05f2c"
+                }
+                    );
+                    </script>
+                </div>
+                <!-- TradingView Widget END -->
+                
+            </div>
+
+            <div class="fundamental-data">
+                <p>Forex Market Fundamental Data</p>
+                <div class="table-data">
+                    
+                    <!-- TradingView Widget BEGIN -->
+            <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+                <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/currencies/forex-cross-rates/" rel="noopener" target="_blank"><span class="blue-text">Forex Market Fundamental Data</span></a></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js" async>
+                {
+                "width": "100%",
+                "height": "100%",
+                "currencies": [
+                "EUR",
+                "USD",
+                "JPY",
+                "GBP",
+                "CHF",
+                "AUD",
+                "CAD",
+                "NZD",
+                "CNY",
+                "TRY",
+                "SEK"
+                ],
+                "isTransparent": false,
+                "colorTheme": "dark",
+                "locale": "en"
+            }
+                </script>
+            </div>
+  <!-- TradingView Widget END -->
+
+                </div>
+            </div>
+            <div class="footer">
+                <p>All Rights Reserved &copy; CryptoEarning FX 2022</p>
+            </div>
+        </main>
+    </div>
+    </div>
+</body>
+
+</html>

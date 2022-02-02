@@ -1,0 +1,133 @@
+*, *::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --thick-blue: #0e0d0d;
+}
+
+
+@font-face {
+    font-family:poppins;
+    src: url("../fonts/poppins/Poppins-Light.ttf");
+}
+
+@font-face {
+    font-family:poppins-medium;
+    src: url("../fonts/poppins/Poppins-Medium.ttf");
+}
+
+@font-face {
+    font-family:poppins-bold;
+    src: url("../fonts/poppins/Poppins-Bold.ttf");
+}
+
+body{
+    font-family: poppins-medium,'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #221939;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    font-size: 15px;
+    color: var(--thick-blue);
+}
+
+.register-container{
+    width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.register-container .logo > img{
+    width: 70px;
+    height: 70px;
+    margin-bottom: 30px;
+}
+
+.register-container .register-form{
+    width: 100%;
+    border-radius: 6px;
+    background-color: white;
+    padding: 50px 25px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.register-container h1{
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 26px;
+    font-family: poppins-medium, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.register-container  .register-form form > div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.register-container  .register-form form > div p{
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--thick-blue);
+    font-size: 15px;
+}
+
+.register-container  .register-form input{
+    width: 100%;
+    outline: none;
+    border: 1px solid gainsboro;
+    padding: 5px 10px;
+    border-radius: 4px;
+    height: 50px;
+    font-size: 15px;
+}
+
+.register-container button{
+    display: flex;
+    align-items: center;
+    background-color: #113349;
+    padding: 20px 25px ;
+    height: 50px;
+    margin-top: 30px;
+    outline: none;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-inline: auto;
+}
+
+.register-container button a{
+    color: white;
+    text-decoration: none;
+}
+
+.register-container .password-block{
+    display: flex;
+    flex-direction: row !important;
+    gap: 5px;
+}
+.register-container .sign-in,
+.register-container .footer{
+    text-align: center;
+}
+
+@media screen and (max-width:430px) {
+    .register-container .password-block{
+        flex-direction: column !important;
+    }
+    .register-container .password-block .password{
+        margin-bottom: 10px;
+    }
+}

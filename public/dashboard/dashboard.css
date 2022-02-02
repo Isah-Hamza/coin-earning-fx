@@ -1,0 +1,293 @@
+*,*::after,*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: var(--color-light);
+}
+
+
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 100%;
+    height: auto;
+    background-color: #191f33;
+    color:white;
+    --color-light: #b9babf;
+    --color-bright: #b8b9ba;
+    font-family: poppins-medium;
+}
+
+.main-header{
+    background-color: #1a2035;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    height: 60px;
+    padding: 10px 20px;
+    align-items: center;
+    box-shadow: 0px -2px 6px 3px rgba(0,0,0,.5);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+}
+
+.main-header .left,
+.main-header .right{
+    display: flex;
+    align-items: center;
+}
+
+.main-header .left img{
+    width: 20px;
+    height: 15px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.main-header .right i{
+    font-size: 18px;
+    margin-left: 5px;
+    padding: 10px 12px;
+    cursor: pointer;
+}
+
+.main-header .right i:hover{
+    background-color: rgba(204, 204, 204, .9);
+    border-radius: 4px;
+}
+
+.main-header .language{
+    padding: 8px 15px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.main-header .switch{
+    width: 60px;
+    height: 34px;
+    background-color: black;
+    border-radius: 45px;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.main-header .switch .toggle{
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: white;
+    transition: all .5s ease;
+    cursor: pointer;
+}
+
+.main-section{
+    display: flex; 
+    margin-top: 60px;
+}
+
+.main-section aside{
+    width: 300px;
+    color: var(--color-light);
+    padding: 10px 15px;
+    height: auto;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+    position: sticky;
+}
+.main-section aside > div{
+    width: 200px;
+}
+.main-section aside::-webkit-scrollbar{
+    width: 7px;
+    border-radius: 40px;
+}
+.main-section aside::-webkit-scrollbar-thumb{
+    background-color: rgba(0,0,0,.5);
+    border-radius: 100vw;
+}
+.main-section aside::-webkit-scrollbar-track{
+    background-color: rgb(28, 36, 58);
+    border-radius: 100vw;
+}
+.main-section .user > div {
+    padding:15px 5px;
+    border-bottom: 1px solid rgba(220, 220, 220, .1);
+    margin-bottom: 10px;
+    color: var(--color-bright);
+    display: flex;
+    align-items: center;
+}
+
+.main-section .user{
+     display: flex;
+     flex-direction: column;
+     cursor: pointer;
+}
+
+.main-section aside .links li{
+    list-style: none;
+}
+.main-section aside .links  li a{ 
+    display: flex;
+    align-items: center;
+    padding:15px 10px;
+    height: 46px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    transition: font-size .5s ease;
+} 
+
+.main-section .dropdown-items{
+    height: 0px;
+    transition: height .5s ease;
+    overflow: hidden;
+}
+.main-section aside .links li ul{
+    overflow: hidden;
+    margin-top: 10px;
+    height: 0px ;
+    transition: height .5s ease;
+}
+
+.show-dropdown{
+    transition: height .5s ease !important;
+    height: 120px !important;
+}
+
+.hide{ display: none !important; }
+
+.main-section aside .links li a:hover{
+    background-color: rgba(204, 204, 204, .99);
+    color:black;
+    font-size: 14.5px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+} 
+
+.main-section aside .links  li ul li,
+.main-section aside .user  li{
+    display: flex;
+    align-items: center;
+    padding:15px 10px;
+    height: 42px;
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+
+.main-section aside .links  li ul li:hover,
+.main-section aside .user  li:hover{
+    background-color: rgba(204, 204, 204, .99);
+    color:black;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.main-section aside .active,
+.main-section aside .active a{
+    background-color: white !important;
+    border-radius: 5px;
+    font-size: 14.5px;
+    font-weight: bold;
+    color: black !important;
+}
+.main-section aside .active:hover{
+    background-color: white !important;
+    border-radius: 5px;
+    color: black !important;
+}
+
+.main-section aside .links i{
+    margin-right: 15px;
+}
+
+.main-section aside .fa-caret-down{
+    float: right;
+    margin-left: auto;
+    margin-right: 5px !important; 
+}
+
+.main-section main{
+    padding: 30px 30px;
+    width: 100%;
+    max-height: calc(100vh - 60px);
+    overflow-y: scroll;
+}
+
+.main-section main .success{
+    margin-top: 30px;
+    color: var(--color-light);
+}
+
+.main-section .user-details{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 20px;
+    background-color: rgb(28, 36, 58);
+    padding: 15px 0 ;
+    margin-bottom: 30px;
+    
+}
+
+.main-section .user-details > div{
+    display: flex;
+    align-items: center;
+    border-right: .5px solid rgba(220, 220, 220, .1);
+    /* gap: 20px; */
+    padding: 20px;
+}
+
+
+.main-section .user-details > div:last-child{
+    border-right: 0;
+}
+
+.main-section .user-details > div i{
+    font-size: 30px;
+    margin-right: 25px;
+}
+
+.main-section .user-details > div > div p:first-child{
+    color: var(--color-light);
+}
+.main-section .user-details > div > div p:last-child{
+    font-size: 23px;
+    margin-top: 10px;
+}
+
+.main-section .personal-chart p:first-child{
+    margin-bottom: 30px;
+    font-size:20px;
+    color: var(--color-light);
+}
+
+.main-section .personal-chart {
+    margin-bottom: 30px;
+    
+}
+
+.main-section .fundamental-data{
+    font-size: 20px;
+    color: var(--color-light);
+}
+
+.main-section .fundamental-data .table-data{
+    height: 500px;
+    margin-top: 30px;
+}
+
+.main-section .footer{
+    margin-top: 30px;
+    padding: 20px 10px 0;
+    border-top: .5px solid rgba(220, 220, 220, .1);
+}

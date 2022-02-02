@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./css/register.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="register-container">
+        <div class="logo"><img src="./assets/img/logo.png" alt="logo"></div>
+        <div class="register-form">
+            <form method="POST" action="/register" >
+                <h1>Create an Account</h1>
+                <div class="fullname">
+                    <p>FullName</p>
+                    <input type="text" name="fullname" id="" placeholder="Enter Full Name">
+                </div>
+                <div class="email">
+                    <p>Email Address</p>
+                    <input type="text" name="email" id="" placeholder="name@example.com">
+                </div>
+    
+                <div class="phone">
+                    <p>Phone Number</p>
+                    <input type="tel" name="phone_number" id="" placeholder="Enter Phone Number">
+                </div>
+                <div class="password-block">
+                    <div class="password">
+                        <p>Password</p>
+                        <input type="password" name="password" id="" placeholder="Enter Password">
+                    </div>
+                   <div class="confirm-password">
+                        <p>Confirm Password</p>
+                        <input type="password" name="confirm_password" id="" placeholder="Confirm Password">
+                    </div>      
+                </div>
+    
+                <div class="country">
+                    <p>Country</p>
+                    <input type="text" name="country" id="" placeholder="Choose Country">
+                </div>
+                <button id="submit" type="submit"><a href="./login.html">Register</a></button>
+            </form>
+            <p class="sign-in">Already have an Account? <a href="./login.html">Login</a></p>
+            <div class="footer">
+                &copy; 2022 &nbsp;&nbsp; Crypto Earning FX &nbsp;&nbsp; All Rights <br> Reserved
+            </div>
+        </div>
+    </div>
+    <script defer>
+
+        const button = document.querySelector('#submit');
+        button.addEventListener('click', (e) => {
+            window.location.href = '/'
+            console.log('passed');
+        })
+
+        console.log(button);
+    </script>
+</body>
+</html> 
