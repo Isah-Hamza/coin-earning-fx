@@ -11,13 +11,16 @@ const User = require('./user');
 
 
 app.use(urlencoded({extended:false}));
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public/'));
 app.set('view engine', 'ejs');
 app.use(cors());
 
 const users = [];
+var verifiedUser = null;
 
-app.get('/', (req, res) => { res.render('login') });
+app.get('/', (req, res) => { res.redirect('/login') });
+
+app.get('/register', (req, res) => res.render('register'));
 
 app.post('/register', async (req, res) => {
     const new_user = {
@@ -79,12 +82,16 @@ app.post('/login', (req, res) => {
     console.log(user.email);
     const existing = users.find(existingUser => user.email == existingUser.email && user.password == existingUser.password);
 
-    if(!existing) return
+    if(!existing) {
+        res.send('Invalid username or password')
+        return
+    }
     else {
-        
-        res.render('dashboard', {user : existing});
-        console.log('user exists', existing);
+        verifiedUser = existing;
+        res.redirect('/dashboard');
     }
 })
+
+app.get('/dashboard', (req, res) => res.render('dashboard', {user : verifiedUser}))
 
 app.listen(PORT, () => { console.log('app listening on port ', PORT) });
