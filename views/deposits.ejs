@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/" />
+    <script src="deposits/deposits.js" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="deposits/deposits.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposit</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="main-header">
+            <div class="left">
+                <h2>CryptoEarning FX</h2>
+                <img src="./assets/img/icon-hamburger.svg" alt="hamburger">
+            </div>
+            <div class="right">
+                <div class="switch">
+                    <div class="toggle"></div>
+                </div>
+                <div class="language">
+                    <p>Select language </p>
+                </div>
+                <i class="fas fa-bell"></i>
+                <i class="fas fa-book"></i>
+                <i class="fas fa-user"></i>
+            </div>
+        </div>
+    <div class="main-section">
+        <aside>
+            <div class="user links dropdown">
+                    <div>
+                        
+                            <p><%= user.fullname %></p>
+                            <i class="fas fa-caret-down"></i>
+                        
+                    </div>
+               
+                <ul class="dropdown-items">
+                    <li><a href="./profile.html">Account Settings</a></li>
+                </ul>
+            </div>
+            <div class="links">
+                <li class="dashboard active">
+                    <a href="/dashboard">
+                        <i class="fas fa-home"></i>
+                        <p>Dashboard</p>   
+                    </a>
+                </li>
+                <li class="account dropdown">
+                    <a href="#">
+                    <i class="fas fa-user"></i>
+                    <p>Account</p>  
+                    <i class="fas fa-caret-down"></i>   
+                    </a>
+                    <ul class="dropdown-items ">
+                           <li> <a href="account-details.html">Withdrawal info</a> </li>
+                            <li> <a href="notifications.html">Notifications</a> </li>
+                    </ul>
+                </li>
+                   
+                <li class="support">
+                    <a href="./support.html">
+                        <i class="fas fa-cog"></i>
+                        <p>Support</p>
+                    </a>
+                </li>
+                <li class="plrecord">
+                    <a href="plrecord.html">
+                        <i class="fas fa-signal"></i>
+                        <p>P/L record</p>
+                    </a>
+                </li>
+                <li class="transaction">
+                    <a href="dashboard/transaction-history">
+                        <i class="fas fa-briefcase"></i>
+                        <p>Transaction history</p>
+                    </a>
+                </li>
+                <li class="deposit dropdown">
+                    <a >
+                        <i class="fas fa-credit-card"></i>
+                        <p>Deposit/Withdrawal</p>
+                        <i class="fas fa-caret-down"></i>
+                    </a>
+                     <ul class="dropdown-items">
+                        <li> <a>Deposit</a> </li>
+                        <li> <a href="dashboard/withdrawals">Withdrawals</a> </li>
+                     </ul>
+                </li>                   
+
+                <li class="subscription">
+                    <a href="./subtrade.html">
+                        <i class="fas fa-th"></i>
+                        <p>Subscription trade</p>
+                    </a>
+                </li>
+                <li class="packages dropdown">
+                    <a href="#">
+                        <i class="fas fa-cube"></i>
+                        <p>Packages</p>
+                        <i class="fas fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-items">
+                        <li> <a href="./mplans.html">Investment Plans</a> </li>
+                        <li>My packages</li>
+                    </ul>
+                </li>                    
+                <li class="refer">
+                    <a href="./referuser.html">
+                        <i class="fas fa-recycle"></i>
+                        <p>Refer users</p>
+                    </a>
+                </li>
+            </div>
+
+        </aside>
+        <main>
+          <h1>Your deposits</h1>
+            <button class="new-deposit"> <span> + </span> New Deposit </button>
+            <div class="record">
+                <div class="head">
+                    <p style="margin-left: 100px;">show <input type="number" name="" value="10" min="10" step="5" list="5"  max="30" id=""> entries</p>
+                    <div class="search">
+                        <span>search</span>
+                        <input type="search" name="search" id="search">
+                    </div>
+                </div>
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Amount</th>
+                                <th>Payment Mode</th>
+                                <th>Status</th>
+                                <th>Date Created</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% const length = user.deposits.length   %>
+                             <% if(!length){ %>
+                                <tr><td colspan="5" style="text-align: center;">No data available in table</td></tr>
+                            <%} %>
+                            <!-- <script>
+                                <tr><td colspan="5" style="text-align: center;">No data available in table</td></tr>
+                            </script> -->
+                           <% user.deposits.forEach(function(item) { %>
+                                <tr>
+                                    <td><%= item.id %></td>
+                                    <td><%= item.amount %></td>
+                                    <td><%= item.mode %></td>
+                                    <td><%= item.status %></td>
+                                    <td><%= item.date %></td>
+                                </tr>
+                           <% }) %>
+                        </tbody>
+                        <tfoot></tfoot>
+                    </table>
+                    <div class="foot">
+                        <p class="entries">Showing 0 to <%= user.deposits.length %> of <%= user.deposits.length %> entries</p>
+                        <div class="buttons">
+                            <button class="prev">Previous</button>
+                            <button class="next">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          <div class="footer">
+            <p>All Rights Reserved &copy; CryptoEarning FX 2022</p>
+        </div>
+        </main>
+
+    </div>
+        <div class="overlay hide">
+            <div>
+                <div class="top">
+                    <p>Make new deposit</p>
+                    <span class="close-overlay">x</span>
+                </div>
+                <div class="bottom">
+                    <form action="/dashboard/payment" method="post">
+                        <input type="text" name="amount" id="amount" placeholder="Enter amount here">
+                        <button type="submit" class="submit"> Continue </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

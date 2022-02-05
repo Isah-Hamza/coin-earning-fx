@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/" />
+    <script src="withdrawal/withdrawal.js" defer></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="withdrawal/withdrawal.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Withdrawal</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="main-header">
+            <div class="left">
+                <h2>CryptoEarning FX</h2>
+                <img src="./assets/img/icon-hamburger.svg" alt="hamburger">
+            </div>
+            <div class="right">
+                <div class="switch">
+                    <div class="toggle"></div>
+                </div>
+                <div class="language">
+                    <p>Select language </p>
+                </div>
+                <i class="fas fa-bell"></i>
+                <i class="fas fa-book"></i>
+                <i class="fas fa-user"></i>
+            </div>
+        </div>
+    <div class="main-section">
+        <aside>
+            <div class="user links dropdown">
+                    <div>
+                        
+                            <p><%= user.fullname%></p>
+                            <i class="fas fa-caret-down"></i>
+                        
+                    </div>
+               
+                <ul class="dropdown-items">
+                    <li><a href="./profile.html">Account Settings</a></li>
+                </ul>
+            </div>
+            <div class="links">
+                <li class="dashboard active">
+                    <a href="/dashboard">
+                        <i class="fas fa-home"></i>
+                        <p>Dashboard</p>   
+                    </a>
+                </li>
+                <li class="account dropdown">
+                    <a >
+                    <i class="fas fa-user"></i>
+                    <p>Account</p>  
+                    <i class="fas fa-caret-down"></i>   
+                    </a>
+                    <ul class="dropdown-items ">
+                           <li> <a href="account-details.html">Withdrawal info</a> </li>
+                            <li> <a href="notifications.html">Notifications</a> </li>
+                    </ul>
+                </li>
+                   
+                <li class="support">
+                    <a href="./support.html">
+                        <i class="fas fa-cog"></i>
+                        <p>Support</p>
+                    </a>
+                </li>
+                <li class="plrecord">
+                    <a href="plrecord.html">
+                        <i class="fas fa-signal"></i>
+                        <p>P/L record</p>
+                    </a>
+                </li>
+                <li class="transaction">
+                    <a href="dashboard/transaction-history">
+                        <i class="fas fa-briefcase"></i>
+                        <p>Transaction history</p>
+                    </a>
+                </li>
+                <li class="deposit dropdown">
+                    <a >
+                        <i class="fas fa-credit-card"></i>
+                        <p>Deposit/Withdrawal</p>
+                        <i class="fas fa-caret-down"></i>
+                    </a>
+                     <ul class="dropdown-items">
+                        <li> <a href="dashboard/deposits">Deposit</a> </li>
+                        <li> <a >Withdrawals</a> </li>
+                     </ul>
+                </li>                   
+
+                <li class="subscription">
+                    <a href="./subtrade.html">
+                        <i class="fas fa-th"></i>
+                        <p>Subscription trade</p>
+                    </a>
+                </li>
+                <li class="packages dropdown">
+                    <a >
+                        <i class="fas fa-cube"></i>
+                        <p>Packages</p>
+                        <i class="fas fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-items">
+                        <li> <a href="./mplans.html">Investment Plans</a> </li>
+                        <li>My packages</li>
+                    </ul>
+                </li>                    
+                <li class="refer">
+                    <a href="./referuser.html">
+                        <i class="fas fa-recycle"></i>
+                        <p>Refer users</p>
+                    </a>
+                </li>
+            </div>
+
+        </aside>
+        <main>
+          <h1>Request for Withdrawal</h1>
+          <% if(withdrawal_feedback != null){ %>
+            <div class="withdrawal-feedback">
+                <p ><%= withdrawal_feedback %></p>
+                <span>x</span>
+            </div>
+          <% } %>
+            <div class="request-cards">
+                <div>
+                    <p>Bitcon</p>
+                    <div>
+                        <p>Minimum Amount: </p>
+                        <p>$50</p>
+                    </div>
+                    <div>
+                        <p>Maximum Amount: </p>
+                        <p>$10000</p>
+                    </div>
+                    <div>
+                        <p> Charges(Fixed): </p>
+                        <p>$0</p>
+                    </div>
+                    <div>
+                        <p>Charges(%): </p>
+                        <p>2%</p>
+                    </div>
+                    <div>
+                        <p>Duration: </p>
+                        <p>Instant</p>
+                    </div>
+                    <button><span>+</span> Request Withdrawal</button>
+                </div>
+
+                <div>
+                    <p>Etherum</p>
+                    <div>
+                        <p>Minimum Amount: </p>
+                        <p>$10</p>
+                    </div>
+                    <div>
+                        <p>Maximum Amount: </p>
+                        <p>$2100</p>
+                    </div>
+                    <div>
+                        <p> Charges(Fixed): </p>
+                        <p>$0</p>
+                    </div>
+                    <div>
+                        <p>Charges(%): </p>
+                        <p>2%</p>
+                    </div>
+                    <div>
+                        <p>Duration: </p>
+                        <p>Instant</p>
+                    </div>
+                    <button><span>+</span> Request Withdrawal</button>
+                </div>
+
+                <div>
+                    <p>Litcoin</p>
+                    <div>
+                        <p>Minimum Amount: </p>
+                        <p>$100</p>
+                    </div>
+                    <div>
+                        <p>Maximum Amount: </p>
+                        <p>$10000</p>
+                    </div>
+                    <div>
+                        <p> Charges(Fixed): </p>
+                        <p>$0</p>
+                    </div>
+                    <div>
+                        <p>Charges(%): </p>
+                        <p>2%</p>
+                    </div>
+                    <div>
+                        <p>Duration: </p>
+                        <p>Instant</p>
+                    </div>
+                    <button><span>+</span> Request Withdrawal</button>
+                </div>
+
+                <div>
+                    <p>Bank Transfer</p>
+                    <div>
+                        <p>Minimum Amount: </p>
+                        <p>$10</p>
+                    </div>
+                    <div>
+                        <p>Maximum Amount: </p>
+                        <p>$2100</p>
+                    </div>
+                    <div>
+                        <p> Charges(Fixed): </p>
+                        <p>$0</p>
+                    </div>
+                    <div>
+                        <p>Charges(%): </p>
+                        <p>2%</p>
+                    </div>
+                    <div>
+                        <p>Duration: </p>
+                        <p>Instant</p>
+                    </div>
+                    <button><span>+</span> Request Withdrawal</button>
+                </div>
+
+            </div>
+          <div class="footer">
+            <p>All Rights Reserved &copy; CryptoEarning FX 2022</p>
+        </div>
+        </main>
+    </div>
+    <div class="overlay hide">
+        <div>
+            <div class="top">
+                <p>Payment will be sent through your selected method</p>
+                <span class="close-overlay">x</span>
+            </div>
+            <div class="bottom">
+                <form action="/dashboard/withdrawals" method="post">
+                    <input type="text" name="amount" id="amount" placeholder="Enter amount here">
+                    <select name="mode" id="mode">
+                        <option value="bitcon">Bitcoin</option>
+                    </select>
+                    <button type="submit" class="submit"> Continue </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

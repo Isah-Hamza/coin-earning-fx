@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/" />
+    <script src="payment/payment.js" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="payment/payment.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="main-header">
+            <div class="left">
+                <h2>CryptoEarning FX</h2>
+                <img src="./assets/img/icon-hamburger.svg" alt="hamburger">
+            </div>
+            <div class="right">
+                <div class="switch">
+                    <div class="toggle"></div>
+                </div>
+                <div class="language">
+                    <p>Select language </p>
+                </div>
+                <i class="fas fa-bell"></i>
+                <i class="fas fa-book"></i>
+                <i class="fas fa-user"></i>
+            </div>
+        </div>
+    <div class="main-section">
+        <aside>
+            <div class="user links dropdown">
+                    <div>
+                        
+                            <p><%= user.fullname %></p>
+                            <i class="fas fa-caret-down"></i>
+                        
+                    </div>
+               
+                <ul class="dropdown-items">
+                    <li><a href="./profile.html">Account Settings</a></li>
+                </ul>
+            </div>
+            <div class="links">
+                <li class="dashboard active">
+                    <a href="/dashboard">
+                        <i class="fas fa-home"></i>
+                        <p>Dashboard</p>   
+                    </a>
+                </li>
+                <li class="account dropdown">
+                    <a>
+                    <i class="fas fa-user"></i>
+                    <p>Account</p>  
+                    <i class="fas fa-caret-down"></i>   
+                    </a>
+                    <ul class="dropdown-items ">
+                           <li> <a href="account-details.html">Withdrawal info</a> </li>
+                            <li> <a href="notifications.html">Notifications</a> </li>
+                    </ul>
+                </li>
+                   
+                <li class="support">
+                    <a href="./support.html">
+                        <i class="fas fa-cog"></i>
+                        <p>Support</p>
+                    </a>
+                </li>
+                <li class="plrecord">
+                    <a href="plrecord.html">
+                        <i class="fas fa-signal"></i>
+                        <p>P/L record</p>
+                    </a>
+                </li>
+                <li class="transaction">
+                    <a href="dashboard/transaction-history">
+                        <i class="fas fa-briefcase"></i>
+                        <p>Transaction history</p>
+                    </a>
+                </li>
+                <li class="deposit dropdown">
+                    <a>
+                        <i class="fas fa-credit-card"></i>
+                        <p>Deposit/Withdrawal</p>
+                        <i class="fas fa-caret-down"></i>
+                    </a>
+                     <ul class="dropdown-items">
+                        <li> <a href="/dashboard/deposits">Deposit</a> </li>
+                        <li> <a href="/dashboard/withdrawals">Withdrawals</a> </li>
+                     </ul>
+                </li>                   
+
+                <li class="subscription">
+                    <a href="./subtrade.html">
+                        <i class="fas fa-th"></i>
+                        <p>Subscription trade</p>
+                    </a>
+                </li>
+                <li class="packages dropdown">
+                    <a>
+                        <i class="fas fa-cube"></i>
+                        <p>Packages</p>
+                        <i class="fas fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-items">
+                        <li> <a href="./mplans.html">Investment Plans</a> </li>
+                        <li>My packages</li>
+                    </ul>
+                </li>                    
+                <li class="refer">
+                    <a href="./referuser.html">
+                        <i class="fas fa-recycle"></i>
+                        <p>Refer users</p>
+                    </a>
+                </li>
+            </div>
+
+        </aside>
+        <main>
+            <h1>Make Payment</h1>
+            <div class="payment">
+                <p>You are to make payment of <span style="font-weight: bold;">$<%= amount%></span> using your preferred
+                     mode of payment below. Screenshot the proof of payment</p>
+                <div class="payment-types">
+                    <div>
+                        <p>Bank deposit/transfer</p>
+                        <img src="./assets/img/btc.png" alt="hamburger">
+                    </div>
+                    <div>
+                        <p>Bitcoin</p>
+                        <img src="./assets/img/btc.png" alt="hamburger">
+                    </div>
+                    <div>
+                        <p>Credit Card</p>
+                        <img src="./assets/img/btc.png" alt="hamburger">
+                    </div>
+                    <div>
+                        <p>Paypal</p>
+                        <img src="./assets/img/btc.png" alt="hamburger">
+                    </div>
+                    <div>
+                        <p>Paystack</p>
+                        <img src="./assets/img/btc.png" alt="hamburger">
+                    </div>
+                </div>
+                <div class="proof">
+                    <form action="/dashboard/payment/confirm_payment" method="post">
+                        <div class="file">
+                            <p>Upload payment proof afer payment(Ignore if payed with cash)</p>
+                            <input type="file" name="payment_proof" id="payment_proof">
+                        </div>
+                        <div class="mode">
+                            <p>Payment mode used</p>
+                            <select name="mode" id="mode">
+                                <option selected  value="bank-transfer">Bank Transfer</option>
+                                <option value="etherum">Etherm</option>
+                                <option value="bitcon">Bitcoin</option>
+                                <option value="litcoin">Litcoin</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="submit-payment">Submit payment</button>
+                    </form>
+
+                </div>
+            </div>
+          <div class="footer">
+            <p>All Rights Reserved &copy; CryptoEarning FX 2022</p>
+        </div>
+        </main>
+    </div>
+    </div>
+</body>
+</html>

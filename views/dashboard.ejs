@@ -48,7 +48,7 @@
             </div>
             <div class="links">
                 <li class="dashboard active">
-                    <a href="#">
+                    <a>
                         <i class="fas fa-home"></i>
                         <p>Dashboard</p>   
                     </a>
@@ -78,20 +78,20 @@
                     </a>
                 </li>
                 <li class="transaction">
-                    <a href="transactions-history.html">
+                    <a href="/dashboard/transaction-history">
                         <i class="fas fa-briefcase"></i>
                         <p>Transaction history</p>
                     </a>
                 </li>
                 <li class="deposit dropdown">
-                    <a href="#">
+                    <a>
                         <i class="fas fa-credit-card"></i>
                         <p>Deposit/Withdrawal</p>
                         <i class="fas fa-caret-down"></i>
                     </a>
                      <ul class="dropdown-items">
-                        <li> <a href="./deposits.html">Deposit</a> </li>
-                        <li> <a href="./withdrawals.html">Withdrawals</a> </li>
+                        <li> <a href="dashboard/deposits">Deposit</a> </li>
+                        <li> <a href="dashboard/withdrawals">Withdrawals</a> </li>
                      </ul>
                 </li>                   
 
@@ -129,14 +129,14 @@
                     <i class="fas fa-download" style="color: rgb(255, 173, 70), 173, 70);"></i>
                     <div class="right">
                         <p>Deposited</p>
-                        <p>$0.00</p>
+                        <p>$<%= user.deposited%></p>
                     </div>
                 </div>
                 <div class="profit">
                     <i class="fas fa-coins" style="color: #1f8635;" ></i>
                     <div class="right">
                         <p>Profit</p>
-                        <p>$0.00</p>
+                        <p>$<%= user.profit%></p>
                     </div>
                 </div>
 
@@ -144,21 +144,21 @@
                     <i class="fas fa-gift" style="color: #f25961;" ></i>
                     <div class="right">
                         <p>Bonus</p>
-                        <p>$0.00</p>
+                        <p>$<%= user.bonus%></p>
                     </div>
                 </div>
                 <div class="ref">
                     <i class="fas fa-retweet" style="color: #1572e8;"></i>
                     <div class="right">
                         <p>Ref. Bonus</p>
-                        <p>$0.00</p>
+                        <p>$<%= user.ref_bonus%></p>
                     </div>
                 </div>
                 <div class="balance">
                     <i class="fas fa-coins" style="color: #1f8635;" ></i>
                     <div class="right">
                         <p>Balance</p>
-                        <p>$0.00</p>
+                        <p>$<%= Number(user.profit) + Number(user.deposited) + Number(user.bonus) + Number(user.ref_bonus)%></p>
                     </div>
                 </div>
                 <div class="total-packages">
