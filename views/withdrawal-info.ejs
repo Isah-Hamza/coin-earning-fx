@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/"/>
+    <script src="withdrawal-info/withdrawal-info.js" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="withdrawal-info/withdrawal-info.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Details</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="main-header">
+            <div class="left">
+                <h2>CryptoEarning FX</h2>
+                <img src="assets/img/icon-hamburger.svg" alt="hamburger">
+            </div>
+            <div class="right">
+                <div class="switch">
+                    <div class="toggle"></div>
+                </div>
+                <div class="language">
+                    <p>Select language </p>
+                </div>
+                <i class="fas fa-bell"></i>
+                <i class="fas fa-book"></i>
+                <i class="fas fa-user"></i>
+            </div>
+        </div>
+    <div class="main-section">
+        <aside>
+            <div class="user links dropdown">
+                    <div>
+                        
+                            <p><%= user.fullname %></p>
+                            <i class="fas fa-caret-down"></i>
+                        
+                    </div>
+               
+                <ul class="dropdown-items">
+                    <li><a href="./profile.html">Account Settings</a></li>
+                </ul>
+            </div>
+            <div class="links">
+                <li class="dashboard active">
+                    <a href="/dashboard">
+                        <i class="fas fa-home"></i>
+                        <p>Dashboard</p>   
+                    </a>
+                </li>
+                <li class="account dropdown">
+                    <a >
+                    <i class="fas fa-user"></i>
+                    <p>Account</p>  
+                    <i class="fas fa-caret-down"></i>   
+                    </a>
+                    <ul class="dropdown-items ">
+                           <li> <a>Withdrawal info</a> </li>
+                            <li> <a href="notifications.html">Notifications</a> </li>
+                    </ul>
+                </li>
+                   
+                <li class="support">
+                    <a href="./support.html">
+                        <i class="fas fa-cog"></i>
+                        <p>Support</p>
+                    </a>
+                </li>
+                <li class="plrecord">
+                    <a href="plrecord.html">
+                        <i class="fas fa-signal"></i>
+                        <p>P/L record</p>
+                    </a>
+                </li>
+                <li class="transaction">
+                    <a href="/dashboard/transactions-history">
+                        <i class="fas fa-briefcase"></i>
+                        <p>Transaction history</p>
+                    </a>
+                </li>
+                <li class="deposit dropdown">
+                    <a >
+                        <i class="fas fa-credit-card"></i>
+                        <p>Deposit/Withdrawal</p>
+                        <i class="fas fa-caret-down"></i>
+                    </a>
+                     <ul class="dropdown-items">
+                        <li> <a href="dashboard/deposits">Deposit</a> </li>
+                        <li> <a href="dashboard/withdrawals">Withdrawals</a> </li>
+                     </ul>
+                </li>                   
+
+                <li class="subscription">
+                    <a href="./subtrade.html">
+                        <i class="fas fa-th"></i>
+                        <p>Subscription trade</p>
+                    </a>
+                </li>
+                <li class="packages dropdown">
+                    <a>
+                        <i class="fas fa-cube"></i>
+                        <p>Packages</p>
+                        <i class="fas fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-items">
+                        <li> <a href="./mplans.html">Investment Plans</a> </li>
+                        <li>My packages</li>
+                    </ul>
+                </li>                    
+                <li class="refer">
+                    <a href="./referuser.html">
+                        <i class="fas fa-recycle"></i>
+                        <p>Refer users</p>
+                    </a>
+                </li>
+            </div>
+
+        </aside>
+        <main>
+          <p>Add your withdrawal info</p>
+          <% if(account_details_feedback != null){ %>
+            <div class="withdrawal-feedback">
+                <p ><%= account_details_feedback %></p>
+                <span>x</span>
+            </div>
+          <% } %>
+          <div class="withdrawal-info">
+              <form action="/dashboard/account-details" method="post">                  
+                  <div class="bank-transfer">
+                      <div class="header">
+                          <p> <span><i class="fas fa-clone" ></i></span> Bank Transfer</p>
+                          <span class="dropdown"> + </span>
+                      </div>
+                      <div class="body dropdown-items">
+                            <div class="bank-name">
+                                <p>Bank Name</p>
+                                <input type="text" name="bank_name" id="" placeholder="Enter Bank Name">
+                            </div>
+                            <div class="account-name">
+                            <p>Account Name</p>
+                            <input type="text" name="account_name" id="" placeholder="Enter Account Name">
+                            </div>
+                            <div class="account-number">
+                                <p>Account Number</p>
+                                <input type="text" name="account_number" id="" placeholder="Enter Account Number">
+                            </div>
+    
+                      </div>
+                  </div>
+    
+                  <div class="bitcoin">
+                    <div class="header">
+                        <p> <span><i class="fas fa-clone" ></i></span> Bitcoin</p>
+                        <span class="dropdown"> + </span>
+                    </div>
+                    <div class="body dropdown-items">
+                          <div class="bitcoin">
+                              <p>BTC ADDRESS</p>
+                              <input type="text" name="btc_address" id="" placeholder="Enter Bitcoin Address">
+                          </div>
+                    </div>
+                </div>
+    
+                <div class="etherum">
+                    <div class="header">
+                        <p> <span><i class="fas fa-clone" ></i></span> Etherum</p>
+                        <span class="dropdown"> + </span>
+                    </div>
+                    <div class="body dropdown-items">
+                          <div class="etherum">
+                              <p>ETH ADDRESS</p>
+                              <input type="text" name="eth_address" id="" placeholder="Enter Etherum Address">
+                          </div>
+                    </div>
+                </div>
+    
+                <div class="litcoin">
+                    <div class="header">
+                        <p> <span><i class="fas fa-clone" ></i></span> Lithcoin</p>
+                        <span class="dropdown"> + </span>
+                    </div>
+                    <div class="body dropdown-items">
+                          <div class="litcoin">
+                              <p>LTC ADDRESS</p>
+                              <input type="text" name="ltc_address" id="" placeholder="Enter Litcoin Address">
+                          </div>
+                    </div>
+                </div>
+    
+                <button type="submit" class="submit">Submit</button>
+              </form>
+          </div>
+          <div class="footer">
+            <p>All Rights Reserved &copy; CryptoEarning FX 2022</p>
+        </div>
+        </main>
+    </div>
+    </div>
+</body>
+</html>

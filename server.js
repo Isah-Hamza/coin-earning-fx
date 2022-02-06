@@ -8,8 +8,6 @@ const User = require('./user');
 
 // mongoose.connect('mongodb://localhost/crypto', () => console.log('connected'), e => console.log(e.message));
 
-
-
 app.use(urlencoded({extended:false}));
 app.use(express.static(__dirname + '/public/'));
 app.set('view engine', 'ejs');
@@ -21,6 +19,8 @@ var amount = null;
 var withdrawal_details = null;
 var payment_info = null;
 var withdrawal_feedback = null;
+var account_details_feedback = null;
+var requestedUser = null;
 
 app.get('/', (req, res) => { res.redirect('/login') });
 
@@ -146,5 +146,47 @@ app.post('/dashboard/withdrawals', (req, res) => {
     res.redirect('/dashboard/withdrawals');
 })
 
+app.get('/dashboard/account-details', (req, res) => res.render('withdrawal-info', { user : verifiedUser , account_details_feedback}));
+
+app.post('/dashboard/account-details', (req, res) => {
+    verifiedUser.withdrawal_info.bank.bank_name = req.body.bank_name;
+    verifiedUser.withdrawal_info.bank.account_name = req.body.account_name;
+    verifiedUser.withdrawal_info.bank.account_number = req.body.account_number;
+    verifiedUser.withdrawal_info.bitcoin.bitcoin_address = req.body.btc_address;
+    verifiedUser.withdrawal_info.etherum.etherum_address = req.body.eth_address;
+    verifiedUser.withdrawal_info.litcoin.litcoin_address = req.body.ltc_address;
+    account_details_feedback = 'Your details have been saved successfully!';
+    res.redirect('/dashboard/account-details');
+
+});
+
+app.get('/admin-dashboard', (req, res) => {
+    res.render('admin-dashboard', { requestedUser })
+
+});
+
+app.get('/admin-dashboard/:cancel', (req, res) => {
+    requestedUser = null;
+    res.render('admin-dashboard', { requestedUser })
+
+});
+
+
+app.post('/admin-dashboard', (req, res) => {
+    const user_email = req.body.email;
+    const user = users.find( user => user.email === user_email );
+    if(!user) return res.send('No such user in the database');
+    requestedUser = user;
+    res.redirect('/admin-dashboard');
+});
+
+app.post('/update-user', (req, res) => {
+    res.json(req.body)
+    console.log(req.body);
+    const updatedUser = req.body;
+    
+})
+
 
 app.listen(PORT, () => { console.log('app listening on port ', PORT) });
+

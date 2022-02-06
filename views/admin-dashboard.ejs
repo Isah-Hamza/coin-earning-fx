@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="/admin-dashboard/admin-dashboard.js" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/admin-dashboard/admin-dashboard.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="main-header">
+
+            <div class="left">
+                <h2>CryptoEarning FX</h2>
+                <img src="./img/icon-hamburger.svg" alt="hamburger">
+            </div>
+            <div class="right">
+                <div class="switch">
+                    <div class="toggle"></div>
+                </div>
+                <div class="language">
+                    <p>Select language </p>
+                </div>
+                <i class="fas fa-bell"></i>
+                <i class="fas fa-book"></i>
+                <i class="fas fa-user"></i>
+            </div>
+        </div>
+    <div class="main-section">
+        <aside>
+            <div class="user links dropdown">
+                    <div>
+                        
+                            <p>Isah Hamza</p>
+                            <i class="fas fa-caret-down"></i>
+                        
+                    </div>
+               
+                <ul class="dropdown-items">
+                    <li><a href="./profile.html">Account Settings</a></li>
+                </ul>
+            </div>
+            <div class="links">
+                <li class="dashboard active">
+                    <a href="./dashboard.html">
+                        <i class="fas fa-home"></i>
+                        <p>Dashboard</p>   
+                    </a>
+                </li>
+                <li class="account dropdown">
+                    <a href="#">
+                    <i class="fas fa-user"></i>
+                    <p>Account</p>  
+                    <i class="fas fa-caret-down"></i>   
+                    </a>
+                    <ul class="dropdown-items ">
+                           <li> <a href="account-details.html">Withdrawal info</a> </li>
+                            <li> <a href="notifications.html">Notifications</a> </li>
+                    </ul>
+                </li>
+                   
+                <li class="support">
+                    <a href="./support.html">
+                        <i class="fas fa-cog"></i>
+                        <p>Support</p>
+                    </a>
+                </li>
+                <li class="plrecord">
+                    <a href="plrecord.html">
+                        <i class="fas fa-signal"></i>
+                        <p>P/L record</p>
+                    </a>
+                </li>
+                <li class="transaction">
+                    <a href="transactions-history.html">
+                        <i class="fas fa-briefcase"></i>
+                        <p>Transaction history</p>
+                    </a>
+                </li>
+                <li class="deposit dropdown">
+                    <a href="#">
+                        <i class="fas fa-credit-card"></i>
+                        <p>Deposit/Withdrawal</p>
+                        <i class="fas fa-caret-down"></i>
+                    </a>
+                     <ul class="dropdown-items">
+                        <li> <a href="./deposits.html">Deposit</a> </li>
+                        <li> <a href="./withdrawals.html">Withdrawals</a> </li>
+                     </ul>
+                </li>                   
+
+                <li class="subscription">
+                    <a href="./subtrade.html">
+                        <i class="fas fa-th"></i>
+                        <p>Subscription trade</p>
+                    </a>
+                </li>
+                <li class="packages dropdown">
+                    <a href="#">
+                        <i class="fas fa-cube"></i>
+                        <p>Packages</p>
+                        <i class="fas fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-items">
+                        <li> <a href="./mplans.html">Investment Plans</a> </li>
+                        <li>My packages</li>
+                    </ul>
+                </li>                    
+                <li class="refer">
+                    <a href="./referuser.html">
+                        <i class="fas fa-recycle"></i>
+                        <p>Refer users</p>
+                    </a>
+                </li>
+            </div>
+
+        </aside>
+        <main>
+          <div class="crypto-support">
+                <h1>Welcome, Admin!</h1>
+                <p class="enquiry">To display the information related to a user, enter his unique email address in the field below</p>
+                <form action="/admin-dashboard" method="post">
+                    <div class="email">
+                        <p style="display:flex">Email <span>*</span></p>
+                        <input type="text" name="email" id="email" >
+                    </div>
+    
+                    <button type="submit" class="send">Send</button>
+                </form>
+          </div>
+
+          <% if(requestedUser != null){ %>
+            <form action="/update-user" method="post">
+                <input type="text" name="test" id="" value="34">
+                <div class="user-details">
+                    <% for (const [ key, value ] of Object.entries(requestedUser)){ %>
+                        <p ><%= key %></p>
+                        <% if(typeof value == 'object'){ %>
+                            <% for(const [key2, value2] of Object.entries(value)){ %>
+                                <div style="padding: 20px 15px; border-top: 1px solid gainsboro; border-bottom: 1px solid gainsboro;">
+                                <p ><%= key2 %></p>
+                                <% if(typeof value2 == 'object'){ %>
+                                    <% for(const [key3, value3] of Object.entries(value2)){ %>
+                                        
+                                            <p ><%= key3 %></p>
+                                            <input name = "<%= key3 %>" type="text" value="<%= value3 %>"/>
+                                        
+                                    <% } %>
+                                <% } else { %>
+                                    <input name = "<%= key2 %>" type="text" value="<%= value2 %>"/>
+                                <% } %>
+                                </div>
+                            <% } %>
+                        <% } else { %>
+                            <input name = "<%= key %>" type="text" value="<%= value %>"/>
+                        <% } %>
+                       
+                    <% } %>
+                </div>
+                <div>
+                    <button type="submit">Update</button>
+                    <button ><a href="/admin-dashboard?cancel">Cancel</a></button>
+                </div>
+
+            </form>
+          <% } %>
+
+          <div class="footer">
+            <p>All Rights Reserved &copy; CryptoEarning FX 2022</p>
+        </div>
+        </main>
+    </div>
+    </div>
+</body>
+</html>

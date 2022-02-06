@@ -1,0 +1,348 @@
+*,*::after,*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.show-dropdown{
+    transition: all .5s ease !important;
+    height: 300px !important;
+    /* height:  calc(100%) ; */
+    padding: 25px !important;
+}
+
+.show-aside-dropdown{
+    transition: all .5s ease !important;
+    height: 120px !important;
+    /* height:  calc(100%) ; */
+}
+
+.hide{ display: none !important; }
+
+a{
+    text-decoration: none;
+    color: var(--color-light);
+}
+
+
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 100%;
+    background-color: #191f33;
+    color:white;
+    --color-light: #b9babf;
+    --color-bright: #b8b9ba;
+    font-family: poppins-medium;
+}
+
+.main-header{
+    background-color: #1a2035;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    height: 60px;
+    padding: 10px 20px;
+    align-items: center;
+    box-shadow: 0px -2px 6px 3px rgba(0,0,0,.5);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+}
+
+.main-header .left,
+.main-header .right{
+    display: flex;
+    align-items: center;
+}
+
+.main-header .left img{
+    width: 20px;
+    height: 15px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.main-header .right i{
+    font-size: 18px;
+    margin-left: 5px;
+    padding: 10px 12px;
+    cursor: pointer;
+}
+
+.main-header .right i:hover{
+    background-color: rgba(204, 204, 204, .9);
+    border-radius: 4px;
+}
+
+.main-header .language{
+    padding: 8px 15px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.main-header .switch{
+    width: 60px;
+    height: 34px;
+    background-color: black;
+    border-radius: 45px;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.main-header .switch .toggle{
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: white;
+    transition: all .5s ease;
+    cursor: pointer;
+}
+
+.main-section{
+    display: flex; 
+    margin-top: 60px;
+}
+
+.main-section aside{
+    width: 275px;
+    color: var(--color-light);
+    padding: 10px 15px;
+    height: auto;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+    position: fixed;
+}
+.main-section aside > div{
+    width: 225px;
+}
+.main-section aside::-webkit-scrollbar{
+    width: 7px;
+    border-radius: 40px;
+    margin: 5px;
+}
+.main-section aside::-webkit-scrollbar-thumb{
+    background-color: rgba(0,0,0,.5);
+    border-radius: 100vw;
+}
+.main-section aside::-webkit-scrollbar-track{
+    background-color: rgb(28, 36, 58);
+    border-radius: 100vw;
+    margin: 5px;
+}
+.main-section .user > div {
+    padding:15px 5px;
+    border-bottom: 1px solid rgba(220, 220, 220, .1);
+    margin-bottom: 10px;
+    color: var(--color-bright);
+    display: flex;
+    align-items: center;
+}
+
+.main-section .user{
+     display: flex;
+     flex-direction: column;
+     cursor: pointer;
+}
+
+.main-section aside .links li{
+    list-style: none;
+}
+.main-section aside .links  li a{ 
+    display: flex;
+    align-items: center;
+    padding:15px 10px;
+    height: 46px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    transition: font-size .5s ease;
+} 
+
+.main-section .dropdown-items{
+    height: 0px;
+    transition: height .5s ease;
+    overflow: hidden;
+}
+.main-section aside .links li ul{
+    overflow: hidden;
+    margin-top: 10px;
+    height: 0px ;
+    transition: height .5s ease;
+}
+
+
+
+.main-section aside .links li a:hover{
+    background-color: rgba(204, 204, 204, .99);
+    color:black;
+    font-size: 14.5px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+} 
+
+.main-section aside .links  li ul li{
+    display: flex;
+    align-items: center;
+    padding:15px 10px;
+    height: 42px;
+    margin-bottom: 5px;
+    font-size: 12px;
+    padding-left: 50px;
+}
+
+.main-section aside .links  li ul li:hover{
+    background-color: rgba(204, 204, 204, .99);
+    color:black;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.main-section aside .active,
+.main-section aside .active a{
+    background-color: white !important;
+    border-radius: 5px;
+    font-size: 14.5px;
+    font-weight: bold;
+    color: black !important;
+}
+.main-section aside .active:hover{
+    background-color: white !important;
+    border-radius: 5px;
+    color: black !important;
+}
+
+.main-section aside .links i{
+    margin-right: 15px;
+}
+
+.main-section aside .fa-caret-down{
+    float: right;
+    margin-left: auto;
+    margin-right: 5px !important; 
+}
+
+.main-section main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin-left: 275px;
+    padding: 0 20px;
+}
+
+.main-section main > p{
+    margin:40px 0;
+    font-size: 30px;
+    color: white;
+    font-weight: 200;
+}
+
+.main-section .withdrawal-info{
+    width: 100%;
+    align-self: center;
+    padding: 30px;
+    box-shadow: 2px 0px 8px 1px rgba(0,0,0,.5);
+
+}
+.main-section .withdrawal-info .header,
+.main-section .withdrawal-info .body{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.main-section .withdrawal-info .header{
+    margin-bottom: 15px;
+    padding: 25px ;
+    border-bottom: 1px solid rgba(204, 204, 204, .99);
+}
+
+.main-section .withdrawal-info .header > span{
+    cursor: pointer;
+}
+
+
+.main-section .withdrawal-info .header i{
+    font-size: 20px;
+    color: var(--color-light);
+    margin-right: 10px;
+}
+
+.main-section .withdrawal-info .body{
+    transition: all .5s ease !important;
+    height: 0px;
+    padding: 25px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.main-section .withdrawal-info .body,
+.main-section .withdrawal-info .body > div
+{
+    display: flex;
+    margin-bottom: 10px;
+    flex-direction: column;
+}
+
+.main-section .withdrawal-info .body p{
+    margin-bottom: 5px;
+    color: var(--color-bright);
+}
+
+.main-section .withdrawal-info .body input{
+    padding: 15px;
+    background-color: transparent;
+    border: 1px solid rgba(220, 220, 220, .1);
+    border-radius: 4px;
+    outline: none;
+    color: white;
+    font-size: 15px;
+}
+
+.main-section .withdrawal-info .submit:hover{
+    background-color: #072e61;
+    transition: all .5s ease;
+
+}
+
+.main-section .withdrawal-info .submit{
+    padding: 15px 30px;
+    background-color: #174f99;
+    outline: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: all .5s ease;
+    border-radius: 7px;
+}
+
+.main-section .footer{
+    margin-top: 30px;
+    padding: 25px 10px 0;
+    border-top: .5px solid rgba(220, 220, 220, .1);
+}
+
+.main-section .withdrawal-feedback{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background: white;
+    color: black;
+    margin-bottom: 40px;
+    border-radius: 5px;
+    border-left: 7px solid #15458e;
+}
+
+.main-section .withdrawal-feedback span{
+    font-size: 26px;
+    padding: 7px;
+    cursor: pointer;
+}
