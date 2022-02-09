@@ -101,9 +101,9 @@ app.post('/login', (req, res) => {
     }
 })
 
-app.get('/dashboard', (req, res) => res.render('dashboard', {user : verifiedUser}))
+app.get('/dashboard', (req, res) => res.render('dashboarddark', {user : verifiedUser}))
 
-app.get('/dashboard/deposits', (req, res) => res.render('deposits', {user : verifiedUser}))
+app.get('/dashboard/deposit', (req, res) => res.render('deposit', {user : verifiedUser}))
 
 app.post('/dashboard/payment', (req, res) => {
     amount = req.body.amount;
@@ -125,28 +125,28 @@ app.post('/dashboard/payment/confirm_payment', (req, res) => {
     verifiedUser.deposited += payment_info.amount;
     console.log((verifiedUser.deposited) )
     console.log((verifiedUser.balance) )
-    res.redirect('/dashboard/deposits');
+    res.redirect('/dashboard/deposit');
 })
 
-app.get('/dashboard/transaction-history', (req, res) => res.render('transaction-history', { user : verifiedUser }))
+app.get('/dashboard/transaction-history', (req, res) => res.render('transactionhistorydark', { user : verifiedUser }))
 
-app.get('/dashboard/withdrawals', (req, res) => res.render('withdrawal', { user : verifiedUser, withdrawal_feedback }))
+app.get('/dashboard/withdrawal', (req, res) => res.render('withdrawaldark', { user : verifiedUser, withdrawal_feedback }))
 
-app.post('/dashboard/withdrawals', (req, res) => {
+app.post('/dashboard/withdrawal', (req, res) => {
     withdrawal_info = {
         id: Math.floor(Math.random() * 1000 + 1),
         amount: req.body.amount,
-        mode: req.body.mode,
+        mode: req.body.payment_mode,
         date : new Date().toString().substr(0, 24),
         charges: 2/100 * Number(req.body.amount),
         status: 'pending',
     }
     verifiedUser.withdrawals.push(withdrawal_info);
-    withdrawal_feedback = 'Your request have been submitted. Your account would be updated in 24hrs time';
-    res.redirect('/dashboard/withdrawals');
+    withdrawal_feedback = 'Your acount must be verified before you can make withdrawal';
+    res.redirect('/dashboard/withdrawal');
 })
 
-app.get('/dashboard/account-details', (req, res) => res.render('withdrawal-info', { user : verifiedUser , account_details_feedback}));
+app.get('/dashboard/account-details', (req, res) => res.render('withdrawalinfodark', { user : verifiedUser , account_details_feedback}));
 
 app.post('/dashboard/account-details', (req, res) => {
     verifiedUser.withdrawal_info.bank.bank_name = req.body.bank_name;
@@ -162,7 +162,26 @@ app.post('/dashboard/account-details', (req, res) => {
 
 app.get('/admin-dashboard', (req, res) => {
     res.render('admin-dashboard', { requestedUser })
+});
 
+app.get('/dashboard/notification', (req, res) => {
+    res.render('notificationdark', { user: verifiedUser })
+});
+
+app.get('/dashboard/support', (req, res) => {
+    res.render('supportdark', { user: verifiedUser })
+});
+
+app.get('/dashboard/plrecord', (req, res) => {
+    res.render('plrecorddark', { user: verifiedUser })
+});
+
+app.get('/dashboard/verifyaccount', (req, res) => {
+    res.render('verifyaccountdark', { user: verifiedUser })
+});
+
+app.get('/dashboard/subtrade', (req, res) => {
+    res.render('subdark.ejs', { user: verifiedUser });
 });
 
 app.get('/admin-dashboard/:cancel', (req, res) => {
