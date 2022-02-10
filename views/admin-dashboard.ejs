@@ -34,7 +34,7 @@
             <div class="user links dropdown">
                     <div>
                         
-                            <p>Isah Hamza</p>
+                            <p>Admin</p>
                             <i class="fas fa-caret-down"></i>
                         
                     </div>
@@ -134,7 +134,6 @@
 
           <% if(requestedUser != null){ %>
             <form action="/update-user" method="post">
-                <input type="text" name="test" id="" value="34">
                 <div class="user-details">
                     <% for (const [ key, value ] of Object.entries(requestedUser)){ %>
                         <p ><%= key %></p>

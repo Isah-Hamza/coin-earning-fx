@@ -8,18 +8,37 @@
     <title>Document</title>
 </head>
 <body>
+
+    <style type="text/css">
+        .login-feedback{
+            margin-bottom: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items:center;
+            font-size:17px
+        }
+    </style>
+
     <div class="login-container">
         <div class="logo"><img src="./assets/img/logo.png" alt="logo"></div>
         <div class="login-form">
             <h1>User Login</h1>
+
+            <% if( message != null){ %>
+                <div class="login-feedback">
+                    <p style="color: orangered;" ><%= message %></p>
+                </div>
+              <% } %>
+
             <form action="/login" method = 'post'>
                 <div class="email">
                     <p>Email Address</p>
-                    <input type="text" name="email" id="" placeholder="name@example.com">
+                    <input type="text" name="email" id="" value= "<%= user? user.email : ''%>" placeholder="name@example.com">
                 </div>
                 <div class="password">
-                    <p>Password</p>
-                    <input type="password" name="password" id="" placeholder="Enter Password">
+                        <p>Password</p>
+                        <input type="password" name="password" id="" value="<%= user? user.password : '' %>" placeholder="Enter Password">  
                 </div>
                 <button id = 'submit' type="submit">Login</button>
             </form>

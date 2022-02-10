@@ -8,23 +8,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
-    <meta name="csrf-token" content="9aCJaZ75gqAYl9lvgET1SpZyHA8o0tXu12Vz9HNZ">
+    <meta name="csrf-token" content="vs4flJtZfvl8XtsbGceUseDa41eRlCdzMxS1o3jC">
 
-    <title>Crypto Earning Fx | Deposits</title>
-    <link rel="icon" href="http://coindashboard.cryptoearningfx.com/storage/app/public/photos/wM8j0Himages (1).png1635365354" type="image/png"/>
+    <title>Crypto Earning Fx | Profile</title>
+    <link rel="icon" href="https://coindashboard.cryptoearningfx.com/storage/app/public/photos/wM8j0Himages (1).png1635365354" type="image/png"/>
 	
 				<!-- Fonts and icons -->
-		<!--script src="http://coindashboard.cryptoearningfx.com/dash/js/plugin/webfont/webfont.min.js"></script> -->
+		<script src="https://coindashboard.cryptoearningfx.com/dash/js/plugin/webfont/webfont.min.js"></script>
 	<!-- Sweet Alert -->
-		<script src="http://coindashboard.cryptoearningfx.com/dash/js/plugin/sweetalert/sweetalert.min.js "></script>
+		<script src="https://coindashboard.cryptoearningfx.com/dash/js/plugin/sweetalert/sweetalert.min.js "></script>
 		<!-- CSS Files -->
-		<link rel="stylesheet" href="http://coindashboard.cryptoearningfx.com/dash/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://coindashboard.cryptoearningfx.com/dash/css/bootstrap.min.css">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-		<!--<link rel="stylesheet" href="http://coindashboard.cryptoearningfx.com/dash/css/fonts.min.css">-->
-		<link rel="stylesheet" href="http://coindashboard.cryptoearningfx.com/dash/css/atlantis.min.css">
-		<link rel="stylesheet" href="http://coindashboard.cryptoearningfx.com/dash/css/customs.css">
-		<link rel="stylesheet" href="http://coindashboard.cryptoearningfx.com/dash/css/style.css">
-		<link rel="stylesheet" href="http://coindashboard.cryptoearningfx.com/dash/css/atlantis.min.css">
+		<!-- <link rel="stylesheet" href="https://coindashboard.cryptoearningfx.com/dash/css/fonts.min.css"> -->
+        <link rel="stylesheet" href="https://coindashboard.cryptoearningfx.com/dash/css/atlantis.min.css">
+		<link rel="stylesheet" href="https://coindashboard.cryptoearningfx.com/dash/css/customs.css">
+		<link rel="stylesheet" href="https://coindashboard.cryptoearningfx.com/dash/css/style.css">
+		<link rel="stylesheet" href="https://coindashboard.cryptoearningfx.com/dash/css/atlantis.min.css">
 
 		<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.2/css/buttons.dataTables.min.css">
 		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.21/af-2.3.5/b-1.6.3/b-flash-1.6.3/b-html5-1.6.3/b-print-1.6.3/r-2.2.5/datatables.min.css"/>
@@ -56,6 +56,29 @@
 		
 </head>
 <body data-background-color="dark">
+    <style>
+        .message-feedback{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 9px 20px;
+            background: white;
+            color: black;
+            margin-bottom: 40px;
+            border-radius: 5px;
+            border-left: 7px solid #15458e;
+        }
+
+        .message-feedback p{
+            margin-bottom: 0 !important;
+        }
+
+        .message-feedback span{
+            font-size: 26px;
+            padding: 7px;
+            cursor: pointer;
+        }
+    </style>
     <div id="app">
          <!--PayPal-->
         <script>
@@ -115,7 +138,7 @@
                             </label>
                         </div> 
                                                 <script>document.getElementById("style").checked= true;</script>
-                                                <input type="hidden" name="_token" value="9aCJaZ75gqAYl9lvgET1SpZyHA8o0tXu12Vz9HNZ">
+                                                <input type="hidden" name="_token" value="vs4flJtZfvl8XtsbGceUseDa41eRlCdzMxS1o3jC">
                     </form>
                 </li>
                                 <li class="nav-item hidden-caret">
@@ -147,7 +170,7 @@
                         <div class="quick-actions-scroll scrollbar-outer">
                             <div class="quick-actions-items">
                                 <div class="m-0 row">
-                                                                <a href="verifyaccountdark.html" class="btn btn-success">Verify Account </a>
+                                                                <a href="/dashboard/verifyaccount" class="btn btn-success">Verify Account </a>
                                                                 </div>
                             </div>
                         </div>
@@ -161,15 +184,15 @@
                         <div class="dropdown-user-scroll scrollbar-outer">
                             <li>
                                 <a class="dropdown-item" href="changepassworddark.html">Change Password</a>
-                                <a class="dropdown-item" href="/dashboard/accountsettings">Account Settings</a>
+                                <a class="dropdown-item" href="accountsettingsdark.html">Account Settings</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="http://coindashboard.cryptoearningfx.com/logout"
+                                <a class="dropdown-item" href="https://coindashboard.cryptoearningfx.com/logout"
                                     onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
                                     Logout
                                     </a>
-                                <form id="logout-form" action="http://coindashboard.cryptoearningfx.com/logout" method="POST" style="display: none;">
-                                    <input type="hidden" name="_token" value="9aCJaZ75gqAYl9lvgET1SpZyHA8o0tXu12Vz9HNZ">
+                                <form id="logout-form" action="https://coindashboard.cryptoearningfx.com/logout" method="POST" style="display: none;">
+                                    <input type="hidden" name="_token" value="vs4flJtZfvl8XtsbGceUseDa41eRlCdzMxS1o3jC">
                                 </form> 
                             </li>
                         </div>
@@ -183,7 +206,7 @@
 <script type="text/javascript">
     $("#styleform").on('change',function(){
     $.ajax({
-        url: "http://coindashboard.cryptoearningfx.com/dashboard/changetheme",
+        url: "https://coindashboard.cryptoearningfx.com/dashboard/changetheme",
         type: 'POST',
         data:$("#styleform").serialize(),
         success: function (data) {
@@ -206,7 +229,7 @@
                 <div class="info">
                     <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                         <span>
-                            <%= user.fullname%>
+                            <%= user.fullname %>
                             
                             <span class="caret"></span>
                         </span>
@@ -215,7 +238,7 @@
                     <div class="collapse in" id="collapseExample">
                         <ul class="nav">
                             <li>
-                                <a href="/dashboard/accountsettings">
+                                <a href="#">
                                     <span class="link-collapse">Account Settings</span>
                                 </a>
                             </li>
@@ -278,7 +301,7 @@
                     <div class="collapse" id="dept">
                         <ul class="nav nav-collapse">
                             <li>
-                                <a href="#">
+                                <a href="/dashboard/deposit">
                                     <span class="sub-item">Deposits</span>
                                 </a>
                             </li>
@@ -332,221 +355,47 @@
 			<div class="content bg-dark">
 				<div class="page-inner">
 					<div class="mt-2 mb-4">
-					<h1 class="title1 text-light">Your deposits</h1>
+						<h1 class="title1 text-light">Account Profile Information</h1>
 					</div>
+
+                    <% if(message){ %>
+                        <div class="message-feedback">
+                            <p ><%= message %></p>
+                            <span>x</span>
+                        </div>
+                    <% } %>
 							
-										<div class="row py-3 mb-4">
-						<div class="col">
-							<a class="btn btn-primary" href="#" data-toggle="modal" data-target="#depositModal"><i class="fa fa-plus"></i> New deposit</a>
-						</div>
+										<div class="row profile">
+						
+                        <div class="p-2 col-md-8 offset-md-2">
+                            <div class="card p-5 shadow-lg bg-dark">
+
+                                <form role="form" method="post" action="">
+                                    <h5 class="text-light">Fullname</h5>
+                                    <input type="text" name="name" value="<%= user.fullname%>" class="form-control bg-dark text-light"> <br>
+                                    <h5 class="text-light">Date of Birth</h5>
+                                    <input type="date" name="dob" class="form-control bg-dark text-light" value="<%= user.dob%>"> <br>
+                                    <h5 class="text-light">Phone Number</h5>
+                                    <input type="text" name="phone"  class="form-control bg-dark text-light" value="<%= user.phone_number %>"> <br>
+                                    <h5 class="text-light">Country</h5>
+                                    <input type="text" value="Nigeria" class="form-control bg-dark text-light" readonly> <br>
+                                    <h5 class="text-light">Email</h5>
+                                    <input type="text" value="<%= user.email %>" class="form-control bg-dark text-light" readonly> <br>
+                                    <h5 class="text-light">Address</h5>
+                                    <textarea class="form-control bg-dark text-light" placeholder="Full Address" name="address" row="3" value="<%= user.address%>"></textarea><br/>
+                                    <input type="hidden" name="_token" value="vs4flJtZfvl8XtsbGceUseDa41eRlCdzMxS1o3jC">
+                                    <input type="submit" class="btn btn-primary" value="Save">
+                                </form>
+                                
+                                
+                                <div class="mt-3">
+                                    <a href="https://coindashboard.cryptoearningfx.com/dashboard/manage-account-security" class="btn btn-primary">Manage Account Security</a>
+                                </div>
+                            </div>
+                        </div>
 					</div>
-					<div class="row mb-5">
-					<div class="col text-center card p-4 bg-dark">
-							<div class="bs-example widget-shadow table-responsive" data-example-id="hoverable-table"> 
-							<table  class="UserTable table table-hover text-light"> 
-									<thead> 
-										<tr> 
-											<th>ID</th> 
-											<th>Amount</th>
-											<th>Payment mode</th>
-											<th>Status</th> 
-											<th>Date created</th>
-										</tr> 
-									</thead> 
-									<tbody> 
-                                        <% const length = user.deposits.length   %>
-                                        <% if(!length){ %>
-                                            <tr><td colspan="5" style="text-align: center;">No data available in table</td></tr>
-                                        <%} %>
-                                        <!-- <script>
-                                            <tr><td colspan="5" style="text-align: center;">No data available in table</td></tr>
-                                        </script> -->
-                                        <% user.deposits.forEach(function(item) { %>
-                                                <tr>
-                                                    <td><%= item.id %></td>
-                                                    <td><%= item.amount %></td>
-                                                    <td><%= item.mode %></td>
-                                                    <td><%= item.status %></td>
-                                                    <td><%= item.date %></td>
-                                                </tr>
-                                        <% }) %>
-                                    </tbody> 
-								</table>
-							</div>
-						</div>
-					</div>
-				</div>
+				</div>	
 			</div>
-			<!-- Deposit Modal -->
-			<div id="depositModal" class="modal fade" role="dialog">
-				<div class="modal-dialog">
-  
-				  <!-- Modal content-->
-				  <div class="modal-content">
-					<div class="modal-header bg-dark">
-					  <h4 class="modal-title text-light">Make new deposit</h4>
-					  <button type="button" class="close text-light" data-dismiss="modal">&times;</button>
-					</div>
-					<div class="modal-body bg-dark">
-						  <form style="padding:3px;" role="form" method="post" action="/dashboard/payment">
-								 <input style="padding:5px;" class="form-control text-light bg-dark" placeholder="Enter amount here" type="text" name="amount" required><br/>
-								 
-								 <input type="hidden" name="_token" value="9aCJaZ75gqAYl9lvgET1SpZyHA8o0tXu12Vz9HNZ">
-								 <input type="submit" class="btn btn-light" value="Continue">
-						 </form>
-					</div>
-				  </div>
-				</div>
-			  </div>
-			  <!-- /deposit Modal -->
-			
-			
-			<!-- Delete Subscription Modal -->
-			<div id="delsubmodal" class="modal fade" role="dialog">
-				<div class="modal-dialog">
-				  <!-- Modal content-->
-				  <div class="modal-content">
-					<div class="modal-header bg-dark">
-					  <h4 class="modal-title text-light">Delete MT4 Details</h4>
-					  <button type="button" class="close text-light" data-dismiss="modal">&times;</button>
-					</div>
-					<div class="modal-body bg-dark p-3">
-						<h5 class="text-light">Your subscription has already started, send an Email to info@coin.cryptoearningfx.com to have your MT4 Details Deleted.</h5>
-					</div>
-				  </div>
-				</div>
-			  </div>
-			  <!-- /deposit Modal -->
-			
-		
-
-
-					  <!-- Withdrawal Modal -->
-		  <div id="withdrawalModal" class="modal fade" role="dialog">
-			<div class="modal-dialog">
-
-			  <!-- Modal content-->
-			  <div class="modal-content">
-				<div class="modal-header bg-dark">
-				  <h4 class="modal-title text-light">Payment will be sent to your recieving address.</h4>
-				  <button type="button" class="text-white close" data-dismiss="modal">&times;</button>
-				</div>
-				<div class="modal-body bg-dark">
-					  <form style="padding:3px;" role="form" method="post" action="http://coindashboard.cryptoearningfx.com/dashboard/withdrawal">
-							 <input style="padding:5px;" class="form-control bg-dark text-light" placeholder="Enter amount here" type="text" name="amount" required><br/>
-							 
-							 <input type="hidden" name="_token" value="9aCJaZ75gqAYl9lvgET1SpZyHA8o0tXu12Vz9HNZ">
-							 <input type="submit" class="btn btn-light" value="Submit">
-					 </form>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  <!-- /Withdrawals Modal -->
-
-		
-
-			
-
-		<!-- Subscription Payment modal -->
-			<div class="modal fade" id="SubpayModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header bg-dark">
-					
-						<h4 class="modal-title text-light">Subscription Payment</h4>
-						<button type="button" class="close text-light" data-dismiss="modal">&times;</button>
-			      </div>
-
-				<form role="form" method="post" action="http://coindashboard.cryptoearningfx.com/dashboard/deposit" id="priceform">
-				<div class="modal-body bg-dark">
-					
-					<h5 class="text-light">Duration</h5>
-						<select class="form-control bg-dark text-light" onchange="calcAmount(this)" name="duration" class="duration" id="duratn">
-							<option value="default">Select duration</option>
-							<option>Monthly</option>
-							<option>Quaterly</option>
-							<option>Yearly</option>
-						</select><br>
-						<h5 class="text-light">Amount to Pay</h5>
-						<input class="form-control subamount bg-dark text-light" type="text" id="amount" disabled><br/>
-						<input id="amountpay" type="hidden" name="amount">
-						<input type="hidden" value="Subscription Trading" name="pay_type">
-						<input type="hidden" name="_token" value="9aCJaZ75gqAYl9lvgET1SpZyHA8o0tXu12Vz9HNZ">
-				</div>
-				<div class="modal-footer bg-dark">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					<button type="submit" class="btn btn-primary">Pay Now</button>
-				</div>
-				</div>
-				</form>
-
-				<script type="text/javascript">
-				function calcAmount(sub) {
-					if(sub.value=="Quaterly"){
-						var amount = document.getElementById('amount');
-						var amountpay = document.getElementById('amountpay');
-						amount.value = '$10';
-						amountpay.value = '10';
-					}if(sub.value=="Yearly"){
-						var amount = document.getElementById('amount');
-						var amountpay = document.getElementById('amountpay');
-						amount.value = '$15';
-						amountpay.value = '15';
-					}if(sub.value=="Monthly"){
-						var amount = document.getElementById('amount');
-						var amountpay = document.getElementById('amountpay');
-						amount.value = '$5';
-						amountpay.value = '5';
-					}
-				}
-				</script>
-			</div>
-			</div>
-			<!-- Subscription Payment modal -->
-			
-			
-		<!-- Submit MT4 MODAL modal -->
-			<div id="submitmt4modal" class="modal fade" role="dialog">
-			  <div class="modal-dialog">
-			    <!-- Modal content-->
-			    <div class="modal-content">
-					<div class="modal-header bg-dark">
-						<h4 class="modal-title text-light">Submit your MT4 Login Details</h4>
-						<button type="button" class="close text-light" data-dismiss="modal">&times;</button>
-			      </div>
-			     	<div class="modal-body bg-dark">
-              			<form role="form" method="post" action="http://coindashboard.cryptoearningfx.com/dashboard/savemt4details">
-							  
-							  <h5 class="text-light ">MT4 ID*:</h5>
-							<input class="form-control bg-dark text-light"  type="text" name="userid" required><br/>
-							<h5 class="text-light ">MT4 Password*:</h5>
-							<input style="padding:5px;" class="form-control bg-dark text-light"  type="text" name="pswrd" required><br/>
-							<h5 class="text-light ">Account Type:</h5>
-							<input  class="form-control bg-dark text-light" Placeholder="E.g. Standard" type="text" name="acntype" required><br/>	
-							<h5 class="text-light ">Currency*:</h5>
-							<input  class="form-control bg-dark text-light" Placeholder="E.g. USD" type="text" name="currency" required><br/>
-							<h5 class="text-light ">Leverage*:</h5>
-							<input  class="form-control bg-dark text-light" Placeholder="E.g. 1:500"  type="text" name="leverage" required><br/>
-							<h5 class="text-light ">Server*:</h5>
-							<input  class="form-control bg-dark text-light" Placeholder="E.g. HantecGlobal-live"  type="text" name="server" required><br/>
-							<h5 class="text-light ">Subscription Duration:</h5>
-							<select class="form-control bg-dark text-light" name="duration" class="duration">
-								<option value="default">Select duration</option>
-								<option>Monthly</option>
-								<option>Quaterly</option>
-								<option>Yearly</option>
-							</select><br>
-
-					   		<input type="hidden" name="_token" value="9aCJaZ75gqAYl9lvgET1SpZyHA8o0tXu12Vz9HNZ">
-					   		<input type="submit" class="btn btn-primary" value="Submit">
-					   </form>
-			      </div>
-			    </div>
-			  </div>
-			</div>
-			<!-- /plans Modal -->
-	
 			<footer class="footer bg-dark text-light">
                     <div class="container-fluid">
                         <div class="text-center row copyright text-align-center">
@@ -559,25 +408,25 @@
     </div>
 
     <!--   Core JS Files   -->
-	<script src="http://coindashboard.cryptoearningfx.com/dash/js/core/jquery.3.2.1.min.js "></script>
-	<script src="http://coindashboard.cryptoearningfx.com/dash/js/core/popper.min.js"></script>
-	<script src="http://coindashboard.cryptoearningfx.com/dash/js/core/bootstrap.min.js "></script>
-	<script src="http://coindashboard.cryptoearningfx.com/dash/js/customs.js"></script>
+	<script src="https://coindashboard.cryptoearningfx.com/dash/js/core/jquery.3.2.1.min.js "></script>
+	<script src="https://coindashboard.cryptoearningfx.com/dash/js/core/popper.min.js"></script>
+	<script src="https://coindashboard.cryptoearningfx.com/dash/js/core/bootstrap.min.js "></script>
+	<script src="https://coindashboard.cryptoearningfx.com/dash/js/customs.js"></script>
 	
 	<!-- jQuery UI -->
-	<script src="http://coindashboard.cryptoearningfx.com/dash/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-	<script src="http://coindashboard.cryptoearningfx.com/dash/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+	<script src="https://coindashboard.cryptoearningfx.com/dash/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+	<script src="https://coindashboard.cryptoearningfx.com/dash/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
 
 	<!-- jQuery Scrollbar -->
-	<script src="http://coindashboard.cryptoearningfx.com/dash/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js "></script>
+	<script src="https://coindashboard.cryptoearningfx.com/dash/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js "></script>
 
 	<!-- jQuery Sparkline -->
-	<script src="http://coindashboard.cryptoearningfx.com/dash/js/plugin/jquery.sparkline/jquery.sparkline.min.js "></script>
+	<script src="https://coindashboard.cryptoearningfx.com/dash/js/plugin/jquery.sparkline/jquery.sparkline.min.js "></script>
 
 	<!-- Sweet Alert -->
-	<script src="http://coindashboard.cryptoearningfx.com/dash/js/plugin/sweetalert/sweetalert.min.js "></script>
+	<script src="https://coindashboard.cryptoearningfx.com/dash/js/plugin/sweetalert/sweetalert.min.js "></script>
 	<!-- Bootstrap Notify -->
-	<script src="http://coindashboard.cryptoearningfx.com/dash/js/plugin/bootstrap-notify/bootstrap-notify.min.js "></script>
+	<script src="https://coindashboard.cryptoearningfx.com/dash/js/plugin/bootstrap-notify/bootstrap-notify.min.js "></script>
 	
 	<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.21/af-2.3.5/b-1.6.3/b-flash-1.6.3/b-html5-1.6.3/b-print-1.6.3/r-2.2.5/datatables.min.js"></script>
 	
@@ -593,8 +442,8 @@ if (_isNS('google.translate.Element')){return}(function(){var c=_setupNS('google
 
 </script>
 	<!-- Atlantis JS -->
-	<script src="http://coindashboard.cryptoearningfx.com/dash/js/atlantis.min.js"></script>
-	<script src="http://coindashboard.cryptoearningfx.com/dash/js/atlantis.js"></script>
+	<script src="https://coindashboard.cryptoearningfx.com/dash/js/atlantis.min.js"></script>
+	<script src="https://coindashboard.cryptoearningfx.com/dash/js/atlantis.js"></script>
 	<script type="text/javascript">
 		var badWords = [ 
 			'<!--Start of Tawk.to Script-->',
@@ -645,7 +494,7 @@ if (_isNS('google.translate.Element')){return}(function(){var c=_setupNS('google
     window.livewire.devTools(true);
     window.Livewire = window.livewire;
     window.livewire_app_url = '';
-    window.livewire_token = '9aCJaZ75gqAYl9lvgET1SpZyHA8o0tXu12Vz9HNZ';
+    window.livewire_token = 'vs4flJtZfvl8XtsbGceUseDa41eRlCdzMxS1o3jC';
 
 	/* Make sure Livewire loads first. */
 	if (window.Alpine) {

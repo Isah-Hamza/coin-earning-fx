@@ -5,6 +5,8 @@ const cors  = require('cors');
 const { urlencoded } = require('express');
 const mongoose = require('mongoose');
 const User = require('./user');
+const nodemailer = require('nodemailer');
+require('dotenv').config();
 
 // mongoose.connect('mongodb://localhost/crypto', () => console.log('connected'), e => console.log(e.message));
 
@@ -13,7 +15,38 @@ app.use(express.static(__dirname + '/public/'));
 app.set('view engine', 'ejs');
 app.use(cors());
 
-const users = [];
+const test = {
+    email: 'test@test.com', fullname:'test test', password: ''
+}
+
+const sendEmail = () => {
+    let transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: process.env.MAIL_USERNAME,
+          pass: process.env.MAIL_PASSWORD,
+        }
+      });
+    
+      let mailOptions = {
+        from: process.env.MAIL_PASSWORD,
+        to: verifiedUser.email,
+        subject: 'Nodemailer Project',
+        text: 'This is to verify that your account had been successfully created'
+      };
+      console.log(process.env.MAIL_USERNAME)
+    
+      transporter.sendMail(mailOptions, function(err, data) {
+        if (err) {
+          console.log("Error " + err);
+        } else {
+          console.log("Email sent successfully...");
+        }
+      });
+}
+
+
+const users = [test];
 var verifiedUser = null;
 var amount = null;
 var withdrawal_details = null;
@@ -27,21 +60,22 @@ app.get('/', (req, res) => { res.redirect('/login') });
 app.get('/register', (req, res) => res.render('register'));
 
 app.post('/register', async (req, res) => {
-    const new_user = {
-        fullname: req.body.fullname,
-        email: req.body.email,
-        phone_number: req.body.phone_number,
-        password: req.body.password,
-        confirm_password: req.body.confirm_password,
-        country: req.body.country,
-        deposited: parseFloat('0.00'),
-        profit: parseFloat('0.00'),
-        bonus: parseFloat('0.00'),
-        ref_bonus: parseFloat('0.00'),
-        balance: parseFloat('0.00'),
-        active_packages: 0,
-        total_packgages: 0,
-        withdrawal_info : {
+
+    function UserConstructor () {
+        this.fullname = req.body.fullname;
+        this.email= req.body.email,
+        this.phone_number= req.body.phone_number,
+        this.password= req.body.password,
+        this.confirm_password= req.body.confirm_password,
+        this.country= req.body.country,
+        this.deposited= parseFloat('0.00'),
+        this.profit= parseFloat('0.00'),
+        this. bonus= parseFloat('0.00'),
+        this.ref_bonus= parseFloat('0.00'),
+        this.balance = this.deposited + this.profit + this.bonus + this.ref_bonus;
+        this.active_packages= 0,
+        this.total_packgages= 0,
+        this.withdrawal_info = {
             bank:{
                 bank_name:'',
                 account_name:'',
@@ -57,12 +91,11 @@ app.post('/register', async (req, res) => {
                 litcoin_address:''
             }
         },
-        deposits: [],
-        withdrawals : [],
+        this.deposits = [],
+        this.withdrawals  = []
+    }
 
-
-    };
-    
+    const new_user = new UserConstructor();
     
     // try {
     //     const user = await new User(new_user);
@@ -80,23 +113,25 @@ app.post('/register', async (req, res) => {
 })
 
 app.get('/login', (req, res) => {
-    res.render('login');
+    res.render('login', { message: null, user : null });
 })
 
 app.post('/login', (req, res) => {
+    console.log(req.body)
     const user = {
         email: req.body.email,
         password: req.body.password
     };
     console.log(user.email);
     const existing = users.find(existingUser => user.email == existingUser.email && user.password == existingUser.password);
-
+    
     if(!existing) {
-        res.send('Invalid username or password')
+        res.render('login', { message: 'Email or password mismatched', user: req.body })
         return
     }
     else {
         verifiedUser = existing;
+        sendEmail();
         res.redirect('/dashboard');
     }
 })
@@ -123,6 +158,7 @@ app.post('/dashboard/payment/confirm_payment', (req, res) => {
     }
     verifiedUser.deposits.push(payment_info);
     verifiedUser.deposited += payment_info.amount;
+    verifiedUser.balance += payment_info.amount;
     console.log((verifiedUser.deposited) )
     console.log((verifiedUser.balance) )
     res.redirect('/dashboard/deposit');
@@ -146,7 +182,7 @@ app.post('/dashboard/withdrawal', (req, res) => {
     res.redirect('/dashboard/withdrawal');
 })
 
-app.get('/dashboard/account-details', (req, res) => res.render('withdrawalinfodark', { user : verifiedUser , account_details_feedback}));
+app.get('/dashboard/account-details', (req, res) => res.render('withdrawalinfodark', { user : verifiedUser , account_details_feedback: null}));
 
 app.post('/dashboard/account-details', (req, res) => {
     verifiedUser.withdrawal_info.bank.bank_name = req.body.bank_name;
@@ -156,7 +192,7 @@ app.post('/dashboard/account-details', (req, res) => {
     verifiedUser.withdrawal_info.etherum.etherum_address = req.body.eth_address;
     verifiedUser.withdrawal_info.litcoin.litcoin_address = req.body.ltc_address;
     account_details_feedback = 'Your details have been saved successfully!';
-    res.redirect('/dashboard/account-details');
+    res.render('withdrawalinfodark' , { user: verifiedUser, account_details_feedback});
 
 });
 
@@ -184,12 +220,40 @@ app.get('/dashboard/subtrade', (req, res) => {
     res.render('subdark.ejs', { user: verifiedUser });
 });
 
-app.get('/admin-dashboard/:cancel', (req, res) => {
-    requestedUser = null;
-    res.render('admin-dashboard', { requestedUser })
+app.get('/dashboard/accountsettings', (req, res) => {
+    res.render('accountsettingsdark', { user: verifiedUser, message : null });
+});
+
+app.post('/dashboard/accountsettings', (req, res) => {
+
+    const update = {
+        fullname : req.body.name,
+        dob : req.body.dob,
+        phone_number : req.body.phone,
+        address : req.body.address,
+    }
+
+    verifiedUser = { ...verifiedUser , ...update }
+    console.log(verifiedUser)
+    res.render('accountsettingsdark.ejs', { user: verifiedUser, message: "Profile information updated successfully" });  
 
 });
 
+app.get('/dashboard/investmentplans', (req, res) => {
+    res.render('investmentplansdark', { user: verifiedUser });
+});
+
+app.get('/dashboard/mypackage', (req, res) => {
+    res.render('mypackageblack', { user: verifiedUser });
+});
+
+
+
+
+app.get('/admin-dashboard/:cancel', (req, res) => {
+    requestedUser = null;
+    res.render('admin-dashboard', { requestedUser })
+});
 
 app.post('/admin-dashboard', (req, res) => {
     const user_email = req.body.email;
@@ -200,12 +264,15 @@ app.post('/admin-dashboard', (req, res) => {
 });
 
 app.post('/update-user', (req, res) => {
-    res.json(req.body)
-    console.log(req.body);
     const updatedUser = req.body;
-    
+    verifiedUser = updatedUser;
+    console.log(verifiedUser)
+    res.json(updatedUser)
 })
 
+app.get('/*', (req, res) => {
+    res.render('404');
+})
 
 app.listen(PORT, () => { console.log('app listening on port ', PORT) });
 
